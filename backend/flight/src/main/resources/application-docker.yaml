@@ -1,0 +1,36 @@
+server:
+  port: 0
+  servlet:
+    context-path: /flight
+
+#Spring
+spring:
+  application:
+    name: flight
+  datasource:
+    url: jdbc:mysql://mysql-container:33061/flight-db?createDatabaseIfNotExist=true
+    username: user
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+#Eureka
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://eureka-container:9999/eureka/
+  instance:
+    preferIpAddress: true
+
+#Logging
+logging:
+  level:
+    com:
+      hackathon:
+        - INFO
+        - ERROR
