@@ -1,11 +1,12 @@
 package com.travel.booking.model;
 
 import com.travel.booking.enums.BusType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,6 +17,7 @@ public class TicketBus {
     @Id
     private String ticketId;
     private String bookingId;
+    private LocalDateTime bookingDate;
     private String registrationNumber;
     @Enumerated(EnumType.STRING)
     private BusType busType;
@@ -30,4 +32,6 @@ public class TicketBus {
     private String destinationCity;
     private String endTime;
     private String duration;
+    @ElementCollection(targetClass = SeatMap.class, fetch = FetchType.EAGER)
+    private List<SeatMap> seatMaps;
 }

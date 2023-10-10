@@ -20,16 +20,6 @@ public class BookingBusDto {
     private Transport transport;
     @Pattern(regexp = "^[A-Z]{2}[0-9]{2}[ ]?[A-Z]{2}[0-9]{4}$", message = "Invalid registration number format")
     private String registrationNumber;
-    @Pattern(regexp = "^[A-Za-z ]{2,30}", message = "Invalid Source City Format")
-    private String sourceCity;
-    @Pattern(regexp = "^[A-Za-z ]{2,30}", message = "Invalid Destination City Format")
-    private String destinationCity;
-    @Pattern(regexp = "^[0-9]{4}", message = "Invalid Start Time Format")
-    private String startTime;
-    @Pattern(regexp = "^[0-9]{4}", message = "Invalid End Time Format")
-    private String endTime;
-    @Pattern(regexp = "^[0-9]{1,4}", message = "Invalid price per seat format")
-    private String pricePerSeat;
     @ElementCollection(targetClass = SeatMap.class, fetch = FetchType.EAGER)
     private List<SeatMap> seatMaps;
     private String totalPrice;

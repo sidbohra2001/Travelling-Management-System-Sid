@@ -3,6 +3,8 @@ package com.travel.booking.model;
 import com.travel.booking.enums.Transport;
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 import lombok.*;
@@ -17,6 +19,7 @@ public class BookingBus {
     private String bookingId;
     @Enumerated(EnumType.STRING)
     private Transport transport;
+    private LocalDateTime bookingDate;
     private String registrationNumber;
     private String sourceCity;
     private String destinationCity;
