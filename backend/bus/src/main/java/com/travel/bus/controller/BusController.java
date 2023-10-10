@@ -1,11 +1,14 @@
 package com.travel.bus.controller;
 
+import com.travel.bus.dto.BusDto;
 import com.travel.bus.dto.SeatDto;
 import com.travel.bus.enums.AvailabilityStatus;
 import com.travel.bus.exceptions.AlreadyExistsException;
 import com.travel.bus.exceptions.NoDataFoundException;
 import com.travel.bus.model.Bus;
 import com.travel.bus.service.BusService;
+import jakarta.validation.Valid;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -20,13 +23,17 @@ public class BusController {
 
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
-    public Bus add(@RequestBody Bus bus) throws AlreadyExistsException {
+    public Bus add(@Valid @RequestBody BusDto busDto) throws AlreadyExistsException {
+        Bus bus = new Bus();
+        BeanUtils.copyProperties(busDto, bus);
         return service.add(bus);
     }
 
     @PutMapping("/")
     @ResponseStatus(HttpStatus.OK)
-    public Bus update(@RequestBody Bus bus) throws NoDataFoundException {
+    public Bus update(@Valid @RequestBody BusDto busDto) throws NoDataFoundException {
+        Bus bus = new Bus();
+        BeanUtils.copyProperties(busDto, bus);
         return service.update(bus);
     }
 

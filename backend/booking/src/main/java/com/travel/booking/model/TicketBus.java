@@ -1,22 +1,21 @@
-package com.travel.bus.model;
+package com.travel.booking.model;
 
-import com.travel.bus.enums.AvailabilityStatus;
-import com.travel.bus.enums.BusType;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.util.List;
-
+import com.travel.booking.enums.BusType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
+import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 @Entity
-public class Bus {
+public class TicketBus {
     @Id
+    private String ticketId;
+    private String bookingId;
     private String registrationNumber;
     @Enumerated(EnumType.STRING)
     private BusType busType;
@@ -31,9 +30,4 @@ public class Bus {
     private String destinationCity;
     private String endTime;
     private String duration;
-    private int maxSeats;
-    @Enumerated(EnumType.STRING)
-    private AvailabilityStatus availabilityStatus;
-    @ElementCollection(targetClass = Integer.class, fetch = FetchType.EAGER)
-    private List<Integer> occupiedSeats;
 }
