@@ -2,10 +2,7 @@ package com.travel.bus.dto;
 
 import com.travel.bus.enums.AvailabilityStatus;
 import com.travel.bus.enums.BusType;
-import jakarta.persistence.ElementCollection;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 
 import java.util.List;

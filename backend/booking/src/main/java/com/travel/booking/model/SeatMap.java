@@ -1,15 +1,18 @@
 package com.travel.booking.model;
 
 import com.travel.booking.enums.Gender;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @ToString
+@Entity
 public class SeatMap {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private int seatNumber;
     private String passengerName;
     private int age;

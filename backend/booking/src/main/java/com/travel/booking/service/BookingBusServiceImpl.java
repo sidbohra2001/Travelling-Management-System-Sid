@@ -8,6 +8,7 @@ import com.travel.booking.model.BookingBus;
 import com.travel.booking.model.SeatMap;
 import com.travel.booking.model.TicketBus;
 import com.travel.booking.repo.BookingBusRepo;
+import com.travel.booking.repo.SeatMapRepo;
 import com.travel.booking.repo.TicketBusRepo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,8 @@ public class BookingBusServiceImpl implements BookingBusService {
     @Autowired
     private TicketBusRepo ticketBusRepo;
     @Autowired
+    private SeatMapRepo seatMapRepo;
+    @Autowired
     private RestTemplate rest;
 
     /*
@@ -46,6 +49,7 @@ public class BookingBusServiceImpl implements BookingBusService {
         SeatDto seatDto = SeatDto.builder().registrationNumber(bookingBus.getRegistrationNumber()).seatNumbers(seats).build();
         double totalPrice = Double.parseDouble(occupySeats(seatDto));
         bookingBus.setTotalPrice(String.valueOf(totalPrice * 1.18));
+        seatMapRepo.saveAll(bookingBus.getSeatMaps());
         bookingBusRepo.save(bookingBus);
         return generateTicket(busDto, bookingBus);
     }
@@ -86,6 +90,7 @@ public class BookingBusServiceImpl implements BookingBusService {
         List<Integer> seats = seatMaps.stream().mapToInt(SeatMap::getSeatNumber).boxed().toList();
         SeatDto seatDto = SeatDto.builder().registrationNumber(ticketBus.getRegistrationNumber()).seatNumbers(seats).build();
         double totalCost = Double.parseDouble(releaseSeats(seatDto));
+        seatMapRepo.deleteAll(seatMaps);
         ticketBusRepo.deleteById(ticketId);
         return String.valueOf(totalCost * 1.18);
     }

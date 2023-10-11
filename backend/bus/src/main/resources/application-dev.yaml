@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 3333
   servlet:
     context-path: /bus
 
@@ -14,7 +14,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: true
 
 #Eureka
@@ -26,4 +26,5 @@ eureka:
       defaultZone: http://localhost:9999/eureka/
   instance:
     preferIpAddress: true
+    hostname: localhost
 
