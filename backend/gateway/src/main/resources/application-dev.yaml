@@ -12,16 +12,22 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: auth-service
-          uri: lb://auth-service/
+#        - id: auth-service
+#          uri: lb://auth-service/
+#          predicates:
+#            - Path=/auth/**
+        - id: booking
+          uri: lb://booking/
           predicates:
-            - Path=/auth/**
-        - id: application
-          uri: lb://application/
+            - Path=/booking/**
+#          filters:
+#            - AuthenticationFilter
+        - id: bus
+          uri: lb://bus/
           predicates:
-            - Path=/app/**
-          filters:
-            - AuthenticationFilter
+            - Path=/bus/**
+#          filters:
+#            - AuthenticationFilter
 
 eureka:
   client:
