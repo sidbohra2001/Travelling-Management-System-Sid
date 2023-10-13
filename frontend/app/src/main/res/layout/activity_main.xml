@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/material_dynamic_tertiary90"
     tools:context=".MainActivity">
 
     <TextView
@@ -36,7 +37,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/material_dynamic_tertiary90">
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -50,9 +52,9 @@
                     app:srcCompat="@drawable/bmtlogo" />
 
                 <Button
-                    android:id="@+id/userLoginBtn"
+                    android:id="@+id/userBtn"
                     android:layout_width="150dp"
-                    android:layout_height="48dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="80dp"
                     android:scaleX="1.5"
                     android:scaleY="1.5"
@@ -64,7 +66,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView" />
 
                 <Button
-                    android:id="@+id/adminLoginBtn"
+                    android:id="@+id/adminBtn"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
@@ -77,7 +79,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/userLoginBtn" />
+                    app:layout_constraintTop_toBottomOf="@+id/userBtn" />
 
                 <TextView
                     android:id="@+id/textView"
@@ -89,10 +91,11 @@
                     android:scaleY="2"
                     android:text="BookMyTrip.com"
                     android:textColor="#E4392C"
+                    android:textColorHighlight="@color/white"
                     android:textScaleX="1.4"
                     android:textSize="32sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/userLoginBtn"
+                    app:layout_constraintBottom_toTopOf="@+id/userBtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
