@@ -40,6 +40,24 @@
                 android:layout_height="match_parent"
                 android:background="@color/material_dynamic_tertiary90">
 
+                <Button
+                    android:id="@+id/scanQRBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="120dp"
+                    android:layout_marginBottom="120dp"
+                    android:elevation="40dp"
+                    android:scaleX="1.5"
+                    android:scaleY="1.5"
+                    android:text="Scan QR for Server URL"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintVertical_bias="0.0" />
+
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="200dp"

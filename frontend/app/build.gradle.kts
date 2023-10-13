@@ -36,6 +36,9 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    compileOnly("org.projectlombok:lombok:1.18.30")
+    //Self Added Dependencies
+    compileOnly("org.projectlombok:lombok:1.18.30")                                 //lombok dependency
     annotationProcessor("org.projectlombok:lombok:1.18.30")                         //lombok dependency
+    implementation("com.journeyapps:zxing-android-embedded:4.3.0")                  //Zxing dependency for QR Scanner
+    implementation("com.google.zxing:core:3.5.2")                                   //Zxing dependency for QR Scanner
 }
