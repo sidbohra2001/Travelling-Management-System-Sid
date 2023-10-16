@@ -8,7 +8,7 @@ spring:
   application:
     name: bus
   datasource:
-    url: jdbc:mysql://mysql-container:33061/bus-db?createDatabaseIfNotExist=true
+    url: jdbc:mysql://mysql-container:3306/bus-db?useSSL=false&allowPublicKeyRetrieval=true
     username: user
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver

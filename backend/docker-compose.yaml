@@ -38,4 +38,3 @@ services:
     build: ./bus
     environment:
       SPRING_PROFILES_ACTIVE: docker
-      SPRING_DATASOURCE_URL: 'jdbc:mysql://mysql-container:3306/bus-db?useSSL=false&allowPublicKeyRetrieval=true'
