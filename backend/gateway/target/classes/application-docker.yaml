@@ -1,0 +1,28 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /gateway
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: bus
+          uri: lb://bus/
+          predicates:
+            - Path=/bus/**
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://eureka-container:9999/eureka/
+ribbon:
+  server-list-refresh-interval: 5

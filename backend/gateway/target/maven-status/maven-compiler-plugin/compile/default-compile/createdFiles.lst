@@ -1,0 +1,6 @@
+com\booking\gateway\config\GatewayConfig.class
+com\booking\gateway\filter\RouteValidator.class
+com\booking\gateway\filter\AuthenticationFilter.class
+com\booking\gateway\filter\AuthenticationFilter$Config.class
+com\booking\gateway\utils\JwtUtils.class
+com\booking\gateway\GatewayApplication.class

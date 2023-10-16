@@ -1,0 +1,41 @@
+version: '3'
+services:
+  mysql-container:
+    image: 'mysql:latest'
+    ports:
+      - '33061:3306'
+      - '33062:3306'
+      - '33063:3306'
+      - '33064:3306'
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: 'booking-db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+  eureka-container:
+    restart: always
+    build: ./eureka
+    ports:
+      - '9999:9999'
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+  gateway:
+    depends_on:
+      - mysql-container
+      - eureka-container
+    restart: always
+    build: ./gateway
+    ports:
+      - '8888:8888'
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+  bus:
+    depends_on:
+      - mysql-container
+      - eureka-container
+    restart: always
+    build: ./bus
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: 'jdbc:mysql://mysql-container:3306/bus-db?useSSL=false&allowPublicKeyRetrieval=true'

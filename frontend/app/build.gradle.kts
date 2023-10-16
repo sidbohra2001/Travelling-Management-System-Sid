@@ -41,4 +41,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.30")                         //lombok dependency
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")                  //Zxing dependency for QR Scanner
     implementation("com.google.zxing:core:3.5.2")                                   //Zxing dependency for QR Scanner
+    implementation("androidx.biometric:biometric:1.1.0")                            //Biometric Dependency
+    implementation("org.springframework.boot:spring-boot-starter-web:3.1.4")        //Spring Starter Web Dependency
+
 }
