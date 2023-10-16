@@ -13,8 +13,8 @@ spring:
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
-      dialect: org.hibernate.dialect.MySQLDialect
       ddl-auto: update
     show-sql: true
 
