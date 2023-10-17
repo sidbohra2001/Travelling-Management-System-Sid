@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 String domainName = domainNameInput.getText().toString();
                 String portNumber = portNumberInput.getText().toString();
                 Values.GATEWAY_URL = "http://" + domainName + ":" + portNumber;
-                if(domainName.isEmpty() || portNumber.isEmpty())
+                if(domainName.isEmpty() && portNumber.isEmpty())
                     Toast.makeText(getApplicationContext(), "Domain Name and Port Number cannot be Empty !!!", Toast.LENGTH_SHORT).show();
                 else{
                     userBtn.setVisibility(View.VISIBLE);

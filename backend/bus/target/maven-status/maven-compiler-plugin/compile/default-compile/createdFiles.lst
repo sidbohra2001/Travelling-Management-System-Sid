@@ -6,6 +6,7 @@ com\travel\bus\exceptionsHandler\Format.class
 com\travel\bus\repo\BusRepo.class
 com\travel\bus\service\BusServiceImpl.class
 com\travel\bus\dto\SeatDto.class
+com\travel\bus\controller\MiscellaneousController.class
 com\travel\bus\service\BusService.class
 com\travel\bus\model\Bus$BusBuilder.class
 com\travel\bus\dto\BusDto$BusDtoBuilder.class
