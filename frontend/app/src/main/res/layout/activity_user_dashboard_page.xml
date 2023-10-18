@@ -9,7 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/page_bg_blue"
+        android:background="@color/bg_blue_lightest"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -27,22 +27,199 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/serverResponse"
+                    android:id="@+id/userDashBoard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:shadowColor="@color/bg_blue_dark"
+                    android:shadowDx="8"
+                    android:shadowDy="8"
+                    android:shadowRadius="2"
+                    android:text="User Dashboard"
+                    android:textColor="@color/bg_blue_darkest"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/welcomeUsernameMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:shadowColor="@color/bg_blue_dark"
+                    android:shadowDx="8"
+                    android:shadowDy="8"
+                    android:shadowRadius="2"
+                    android:text="WELCOME"
+                    android:textColor="@color/bg_blue_darkest"
+                    android:textSize="48sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/userDashBoard" />
+
+                <TextView
+                    android:id="@+id/userUserNameDisp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:rotationX="40"
+                    android:scaleX="1.25"
+                    android:scaleY="1.5"
+                    android:shadowColor="@color/bg_blue_dark"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="2"
                     android:text="TextView"
-                    android:textColor="@android:color/white"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textColor="@color/bg_blue_darkest"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.5" />
+                    app:layout_constraintTop_toBottomOf="@+id/welcomeUsernameMsg" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@color/bg_blue_light"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userUserNameDisp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingBottom="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/busServiceBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_marginStart="10dp"
+                            android:backgroundTint="@color/bg_blue_dark"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/busIcon"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:backgroundTint="@color/bg_blue_dark"
+                                app:srcCompat="@drawable/busicon" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/busServiceTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:shadowColor="@color/bg_blue_dark"
+                            android:shadowDx="5"
+                            android:shadowDy="5"
+                            android:shadowRadius="2"
+                            android:text="Book Bus"
+                            android:textColor="@color/bg_blue_darkest"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="@id/busServiceBtn"
+                            app:layout_constraintRight_toRightOf="@id/busServiceBtn"
+                            app:layout_constraintTop_toBottomOf="@id/busServiceBtn" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/trainServiceBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="@color/bg_blue_dark"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toStartOf="@+id/flightServiceBtn"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/busServiceBtn"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/trainIcon"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:backgroundTint="@color/bg_blue_dark"
+                                app:srcCompat="@drawable/trainicon" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/trainServiceTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:shadowColor="@color/bg_blue_dark"
+                            android:shadowDx="5"
+                            android:shadowDy="5"
+                            android:shadowRadius="2"
+                            android:text="Book Train"
+                            android:textColor="@color/bg_blue_darkest"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="@id/trainServiceBtn"
+                            app:layout_constraintRight_toRightOf="@id/trainServiceBtn"
+                            app:layout_constraintTop_toBottomOf="@id/trainServiceBtn" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/flightServiceBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:backgroundTint="@color/bg_blue_dark"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/flightIcon"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_margin="5dp"
+                                android:backgroundTint="@color/bg_blue_dark"
+                                app:srcCompat="@drawable/flighticon" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/flightServiceTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:shadowColor="@color/bg_blue_dark"
+                            android:shadowDx="5"
+                            android:shadowDy="5"
+                            android:shadowRadius="2"
+                            android:text="Book Flight"
+                            android:textColor="@color/bg_blue_darkest"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="@id/flightServiceBtn"
+                            app:layout_constraintRight_toRightOf="@id/flightServiceBtn"
+                            app:layout_constraintTop_toBottomOf="@id/flightServiceBtn" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>

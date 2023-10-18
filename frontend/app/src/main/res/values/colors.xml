@@ -4,4 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="page_bg_blue">#FF239FD1</color>
     <color name="btn_bg_dblue">#FF076D92</color>
+    <color name="bg_blue_darkest">#4A55A2</color>
+    <color name="bg_blue_dark">#7895CB</color>
+    <color name="bg_blue_light">#A0BFE0</color>
+    <color name="bg_blue_lightest">#C5DFF8</color>
 </resources>

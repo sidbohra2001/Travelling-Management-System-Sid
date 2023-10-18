@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private CardView enterUrlCard;
     private TextInputEditText domainNameInput, portNumberInput;
     private TextView orSeparator;
+    private String gatewayUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String domainName = domainNameInput.getText().toString();
                 String portNumber = portNumberInput.getText().toString();
-                Values.GATEWAY_URL = "http://" + domainName + ":" + portNumber;
+                gatewayUrl = "http://" + domainName + ":" + portNumber;
                 if(domainName.isEmpty() && portNumber.isEmpty())
                     Toast.makeText(getApplicationContext(), "Domain Name and Port Number cannot be Empty !!!", Toast.LENGTH_SHORT).show();
                 else{
@@ -94,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), UserLogin.class);
                 Toast.makeText(MainActivity.this, "Welcome to User Login", Toast.LENGTH_SHORT).show();
+                intent.putExtra("gatewayUrl", gatewayUrl);
                 startActivity(intent);
             }
         });
@@ -126,16 +128,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode == 1){
             ScanIntentResult intentResult = ScanIntentResult.parseActivityResult(resultCode, data);
-            String url = intentResult.getContents();
-            if(!url.startsWith("Server ")) Toast.makeText(this, "Invalid QR code content !!!", Toast.LENGTH_SHORT).show();
+            gatewayUrl = intentResult.getContents();
+            if(!gatewayUrl.startsWith("Server ")) Toast.makeText(this, "Invalid QR code content !!!", Toast.LENGTH_SHORT).show();
             else{
                 userBtn.setVisibility(View.VISIBLE);
                 adminBtn.setVisibility(View.VISIBLE);
                 scanQRBtn.setVisibility(View.GONE);
                 enterUrlCard.setVisibility(View.GONE);
                 orSeparator.setVisibility(View.GONE);
-                url = url.substring(7);
-                Toast.makeText(this, url, Toast.LENGTH_SHORT).show();
+                gatewayUrl = gatewayUrl.substring(7);
+                Toast.makeText(this, gatewayUrl, Toast.LENGTH_SHORT).show();
             }
         }
         super.onActivityResult(requestCode, resultCode, data);

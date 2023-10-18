@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF239FD1"
+    android:background="@color/bg_blue_lightest"
     tools:context=".MainActivity">
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:text="powered By :  Android"
-        android:textColor="@android:color/white"
+        android:textColor="@color/bg_blue_darkest"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,23 +38,23 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/page_bg_blue">
+                android:background="@color/bg_blue_lightest">
 
                 <Button
                     android:id="@+id/scanQRBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
-                    android:backgroundTint="@color/btn_bg_dblue"
+                    android:layout_marginTop="50dp"
+                    android:backgroundTint="@color/bg_blue_dark"
                     android:elevation="40dp"
                     android:scaleX="1.5"
                     android:scaleY="1.5"
                     android:shadowColor="@android:color/black"
-                    android:shadowDx="5"
-                    android:shadowDy="5"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
                     android:shadowRadius="2"
                     android:text="Scan QR for Server URL"
-                    android:textColor="@color/white"
+                    android:textColor="@color/bg_blue_darkest"
                     android:textStyle="bold"
                     app:cornerRadius="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -77,14 +77,15 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="80dp"
-                    android:backgroundTint="@color/btn_bg_dblue"
+                    android:backgroundTint="@color/bg_blue_dark"
                     android:scaleX="1.5"
                     android:scaleY="1.5"
                     android:shadowColor="@android:color/black"
-                    android:shadowDx="5"
-                    android:shadowDy="5"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
                     android:shadowRadius="2"
                     android:text="USER"
+                    android:textColor="@color/bg_blue_darkest"
                     android:textSize="20dp"
                     android:visibility="invisible"
                     app:cornerRadius="10dp"
@@ -99,14 +100,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
                     android:layout_marginBottom="50dp"
-                    android:backgroundTint="@color/btn_bg_dblue"
+                    android:backgroundTint="@color/bg_blue_dark"
                     android:scaleX="1.5"
                     android:scaleY="1.5"
                     android:shadowColor="@android:color/black"
-                    android:shadowDx="5"
-                    android:shadowDy="5"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
                     android:shadowRadius="2"
                     android:text="ADMIN"
+                    android:textColor="@color/bg_blue_darkest"
                     android:textSize="20dp"
                     android:visibility="invisible"
                     app:cornerRadius="10dp"
@@ -120,26 +122,27 @@
                     android:id="@+id/appName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="30dp"
                     android:fontFamily="sans-serif-medium"
-                    android:rotationX="30"
-                    android:scaleY="2"
-                    android:shadowColor="@android:color/black"
+                    android:scaleY="1.5"
+                    android:shadowColor="@color/bg_blue_dark"
                     android:shadowDx="5"
                     android:shadowDy="5"
                     android:shadowRadius="2"
                     android:text="BookMyTrip.com"
                     android:textAlignment="center"
-                    android:textColor="#D15523"
+                    android:textColor="@color/bg_blue_darkest"
                     android:textScaleX="1.4"
                     android:textSize="32sp"
                     android:textStyle="bold"
+                    android:typeface="serif"
                     app:layout_constraintBottom_toTopOf="@+id/userBtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView2"
-                    app:layout_constraintVertical_bias="0.5" />
+                    app:layout_constraintVertical_bias="0.5"
+                    tools:fontFamily="@font/averia_libre_light" />
 
                 <TextView
                     android:id="@+id/orSeparator"
@@ -149,6 +152,7 @@
                     android:scaleX="1.5"
                     android:scaleY="1.5"
                     android:text="------------------ OR ------------------"
+                    android:textColor="@color/bg_blue_darkest"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -162,7 +166,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="25dp"
                     android:layout_marginEnd="10dp"
-                    android:backgroundTint="@color/btn_bg_dblue"
+                    android:backgroundTint="@color/bg_blue_light"
                     app:cardCornerRadius="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -176,13 +180,13 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="150dp"
                         android:layout_marginBottom="10dp"
-                        android:backgroundTint="@color/page_bg_blue"
+                        android:backgroundTint="@color/bg_blue_dark"
                         android:shadowColor="@android:color/black"
-                        android:shadowDx="5"
-                        android:shadowDy="5"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
                         android:shadowRadius="2"
                         android:text="SUBMIT"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/bg_blue_darkest"
                         android:textSize="24sp"
                         android:textStyle="bold"
                         app:cornerRadius="10dp" />
@@ -203,13 +207,13 @@
                             <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@android:color/white">
+                                android:background="@color/bg_blue_lightest">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/domainNameInput"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:background="@android:color/white"
+                                    android:background="@color/bg_blue_lightest"
                                     android:hint="Enter Domain Name" />
                             </com.google.android.material.textfield.TextInputLayout>
                         </androidx.cardview.widget.CardView>
@@ -234,13 +238,13 @@
                             <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@android:color/white">
+                                android:background="@color/bg_blue_lightest">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/portNumberInput"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:background="@android:color/white"
+                                    android:background="@color/bg_blue_lightest"
                                     android:hint="Enter Port Number"
                                     android:inputType="number" />
                             </com.google.android.material.textfield.TextInputLayout>

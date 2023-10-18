@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/page_bg_blue"
+    android:background="@color/bg_blue_lightest"
     tools:context=".layouts.AdminLogin">
 
     <ScrollView
@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" >
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,12 +40,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
                     android:scaleY="1.25"
-                    android:shadowColor="@android:color/black"
+                    android:shadowColor="@color/bg_blue_dark"
                     android:shadowDx="5"
                     android:shadowDy="5"
                     android:shadowRadius="2"
                     android:text="ADMIN LOGIN PAGE"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/bg_blue_darkest"
                     android:textScaleX="1.25"
                     android:textSize="32sp"
                     android:textStyle="bold"
@@ -62,23 +62,12 @@
                     android:layout_marginTop="50dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="20dp"
-                    android:backgroundTint="@color/btn_bg_dblue"
+                    android:backgroundTint="@color/bg_blue_light"
                     app:cardCornerRadius="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView3">
-
-                    <TextView
-                        android:id="@+id/biometricLoginBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="165dp"
-                        android:text="Biometric Login"
-                        android:textColor="@android:color/white"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/adminLoginBtn"
@@ -88,12 +77,13 @@
                         android:layout_marginTop="150dp"
                         android:layout_marginBottom="10dp"
                         android:layout_weight="1"
-                        android:backgroundTint="@color/page_bg_blue"
+                        android:backgroundTint="@color/bg_blue_dark"
                         android:shadowColor="@android:color/black"
-                        android:shadowDx="5"
+                        android:shadowDx="2"
                         android:shadowDy="5"
                         android:shadowRadius="2"
                         android:text="LOGIN"
+                        android:textColor="@color/bg_blue_darkest"
                         android:textSize="24sp"
                         app:cornerRadius="10dp" />
 
@@ -106,15 +96,15 @@
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@android:color/white">
+                            android:background="@color/bg_blue_lightest">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/adminUsernameInputBox"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@android:color/white"
+                                android:background="@color/bg_blue_lightest"
                                 android:hint="Username"
-                                android:textColorHint="#5198E3" />
+                                android:textColorHint="@color/bg_blue_darkest" />
                         </com.google.android.material.textfield.TextInputLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -129,18 +119,18 @@
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@android:color/white"
+                            android:background="@color/bg_blue_lightest"
                             app:passwordToggleEnabled="true"
-                            app:passwordToggleTint="#5198E3">
+                            app:passwordToggleTint="@color/bg_blue_darkest">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/adminPasswordInputBox"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@android:color/white"
+                                android:background="@color/bg_blue_lightest"
                                 android:hint="Password"
                                 android:inputType="text|textPassword"
-                                android:textColorHint="#5198E3" />
+                                android:textColorHint="@color/bg_blue_darkest" />
 
                         </com.google.android.material.textfield.TextInputLayout>
                     </androidx.cardview.widget.CardView>

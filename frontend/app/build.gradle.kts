@@ -13,6 +13,7 @@ android {
         resources.excludes.add("META-INF/notice.txt")
         resources.excludes.add("META-INF/NOTICE.txt")
         resources.excludes.add("META-INF/NOTICE")
+        resources.excludes.add("META-INF/ASL2.0")
     }
 
     defaultConfig {
@@ -51,5 +52,6 @@ dependencies {
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")                  //Zxing dependency for QR Scanner
     implementation("com.google.zxing:core:3.5.2")                                   //Zxing dependency for QR Scanner
     implementation("androidx.biometric:biometric:1.1.0")                            //Biometric Dependency
-    implementation("org.springframework.android:spring-android-rest-template:1.0.1.RELEASE")    //Rest for android
+    implementation("com.android.volley:volley:1.2.1")                               //Volley for REST calls
+
 }

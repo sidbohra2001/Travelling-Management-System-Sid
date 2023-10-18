@@ -27,11 +27,15 @@ public class UserLogin extends AppCompatActivity {
     private TextInputEditText userUsernameInputBox, userPasswordInputBox;
     private CardView card;
     private Button userLoginBtn;
+    private String gatewayUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_login_page);
+
+        //Retrieving Intent Extras
+        gatewayUrl = getIntent().getExtras().getString("gatewayUrl");
 
         //Initializing Resources
         registerHereBtn = findViewById(R.id.registerHereBtn);
@@ -55,6 +59,8 @@ public class UserLogin extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), UserDashboard.class);
                 intent.putExtra("username", userUsernameInputBox.getText().toString());
+                intent.putExtra("gatewayUrl", gatewayUrl);
+                Toast.makeText(UserLogin.this, gatewayUrl, Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
         });

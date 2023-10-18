@@ -9,13 +9,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/page_bg_blue"
+        android:background="@color/bg_blue_lightest"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" >
+        app:layout_constraintVertical_bias="0.5">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,13 +53,13 @@
                     android:layout_marginTop="50dp"
                     android:scaleX="1.10"
                     android:scaleY="1.1"
-                    android:shadowColor="@android:color/black"
+                    android:shadowColor="@color/bg_blue_dark"
                     android:shadowDx="5"
                     android:shadowDy="5"
                     android:shadowRadius="2"
                     android:text="USER REGISTRATION\nPAGE"
                     android:textAlignment="center"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/bg_blue_darkest"
                     android:textSize="32sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="50dp"
                     android:layout_marginEnd="10dp"
-                    android:backgroundTint="@color/btn_bg_dblue"
+                    android:backgroundTint="@color/bg_blue_light"
                     app:cardCornerRadius="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -91,14 +91,15 @@
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@android:color/white">
+                            android:background="@color/bg_blue_lightest">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/registerUsernameInput"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@android:color/white"
-                                android:hint="Username" />
+                                android:background="@color/bg_blue_lightest"
+                                android:hint="Username"
+                                android:textColorHint="@color/bg_blue_darkest" />
                         </com.google.android.material.textfield.TextInputLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -113,17 +114,18 @@
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@android:color/white"
+                            android:background="@color/bg_blue_lightest"
                             app:passwordToggleEnabled="true"
-                            app:passwordToggleTint="@color/page_bg_blue">
+                            app:passwordToggleTint="@color/bg_blue_darkest">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/registerPasswordInput"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@android:color/white"
+                                android:background="@color/bg_blue_lightest"
                                 android:hint="Password"
-                                android:inputType="textPassword" />
+                                android:inputType="textPassword"
+                                android:textColorHint="@color/bg_blue_darkest" />
                         </com.google.android.material.textfield.TextInputLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -138,17 +140,18 @@
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@android:color/white"
+                            android:background="@color/bg_blue_lightest"
                             app:passwordToggleEnabled="true"
-                            app:passwordToggleTint="@color/page_bg_blue">
+                            app:passwordToggleTint="@color/bg_blue_darkest">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/registerConfirmPasswordInput"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@android:color/white"
+                                android:background="@color/bg_blue_lightest"
                                 android:hint="Confirm Password"
-                                android:inputType="text|textPassword" />
+                                android:inputType="text|textPassword"
+                                android:textColorHint="@color/bg_blue_darkest" />
                         </com.google.android.material.textfield.TextInputLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -159,10 +162,15 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="230dp"
                         android:layout_marginBottom="20dp"
-                        android:backgroundTint="@color/page_bg_blue"
+                        android:backgroundTint="@color/bg_blue_dark"
                         android:scaleX="1.5"
                         android:scaleY="1.5"
+                        android:shadowColor="@android:color/black"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="2"
                         android:text="REGISTER"
+                        android:textColor="@color/bg_blue_darkest"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:cornerRadius="10dp" />
