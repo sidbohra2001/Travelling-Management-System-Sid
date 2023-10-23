@@ -142,7 +142,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView2"
                     app:layout_constraintVertical_bias="0.5"
-                    tools:fontFamily="@font/averia_libre_light" />
+                    app:fontFamily="@font/averia_libre_light" />
 
                 <TextView
                     android:id="@+id/orSeparator"

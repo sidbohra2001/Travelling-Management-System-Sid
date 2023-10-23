@@ -18,7 +18,7 @@ android {
 
     defaultConfig {
         applicationId = "com.travel.app"
-        minSdk = 26
+        minSdk = 28
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"

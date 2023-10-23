@@ -8,26 +8,16 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.android.volley.NetworkResponse;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.JsonRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.travel.app.R;
-import com.travel.app.model.Bus;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.util.HashMap;
 
 public class UserDashboard extends AppCompatActivity {
 
-    private String gatewayUrl, username;
+    private String gatewayUrl, username, transportUrl, bookingUrl;
     private TextView userUserNameDisp;
-    private CardView busServiceBtn, trainServiceBtn, flightServiceBtn;
+    private CardView busServiceBtn, trainServiceBtn, flightServiceBtn, showBookingsBtn;
+    private HashMap<String, String> session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +25,15 @@ public class UserDashboard extends AppCompatActivity {
         setContentView(R.layout.activity_user_dashboard_page);
 
         //Initializing Resources
+        session = (HashMap<String, String>) getIntent().getSerializableExtra("session");
         userUserNameDisp = findViewById(R.id.userUserNameDisp);
         busServiceBtn = findViewById(R.id.busServiceBtn);
         trainServiceBtn = findViewById(R.id.trainServiceBtn);
         flightServiceBtn = findViewById(R.id.flightServiceBtn);
-        username = getIntent().getStringExtra("username");
-        gatewayUrl = getIntent().getStringExtra("gatewayUrl");
+        showBookingsBtn = findViewById(R.id.showBookingsBtn);
+        username = session.get("username");
+        gatewayUrl = session.get("gatewayUrl");
+        bookingUrl = gatewayUrl+"/booking";
 
         //Setting behaviours
         userUserNameDisp.setText(username);
@@ -48,6 +41,7 @@ public class UserDashboard extends AppCompatActivity {
         busServiceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                transportUrl = gatewayUrl+"/bus";
                 Toast.makeText(UserDashboard.this, "Welcome To Bus Services", Toast.LENGTH_SHORT).show();
             }
         });
@@ -55,6 +49,7 @@ public class UserDashboard extends AppCompatActivity {
         trainServiceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                transportUrl = gatewayUrl+"/train";
                 Toast.makeText(UserDashboard.this, "Welcome To Train Services", Toast.LENGTH_SHORT).show();
             }
         });
@@ -62,7 +57,16 @@ public class UserDashboard extends AppCompatActivity {
         flightServiceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                transportUrl = gatewayUrl+"/flight";
                 Toast.makeText(UserDashboard.this, "Welcome To Flight Services", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        showBookingsBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                bookingUrl = gatewayUrl+"/bookings";
+                Toast.makeText(UserDashboard.this, "Welcome To your Bookings", Toast.LENGTH_SHORT).show();
             }
         });
     }

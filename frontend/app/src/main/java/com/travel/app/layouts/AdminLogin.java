@@ -10,17 +10,23 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.travel.app.MainActivity;
 import com.travel.app.R;
 
+import java.util.HashMap;
 import java.util.concurrent.Executor;
 
 public class AdminLogin extends AppCompatActivity {
 
-    private TextView biometricLoginBtn, adminLoginBtn;
+    private Button adminLoginBtn;
+    private HashMap<String, String> session;
+    private String gatewayUrl;
+    private TextInputEditText adminUsernameInputBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +35,9 @@ public class AdminLogin extends AppCompatActivity {
 
         //Initializing Resources
         adminLoginBtn = findViewById(R.id.adminLoginBtn);
-
+        adminUsernameInputBox = findViewById(R.id.adminUsernameInputBox);
+        session = (HashMap<String, String>) getIntent().getSerializableExtra("session");
+        gatewayUrl = session.get("gatewayUrl");
 
         //Setting onClickListeners
         adminLoginBtn.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +66,9 @@ public class AdminLogin extends AppCompatActivity {
                 public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                     super.onAuthenticationSucceeded(result);
                     Toast.makeText(AdminLogin.this, "Biometric Authentication Successful", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), AdminDashboard.class);
+                    session.put("adminName", adminUsernameInputBox.getText().toString());
+                    intent.putExtra("session", session);
                     startActivity(intent);
                 }
 

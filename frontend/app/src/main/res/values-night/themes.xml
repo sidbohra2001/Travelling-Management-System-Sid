@@ -2,6 +2,10 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.TravellingManagementSystem" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:statusBarColor">@color/bg_blue_darkest</item>
+        <item name="android:navigationBarColor">@color/bg_blue_lightest</item>
+        <item name="android:textColorHint">@color/bg_blue_darkest</item>
     </style>
+
+    <style name="Theme.TravellingManagementSystem" parent="Base.Theme.TravellingManagementSystem" />
 </resources>

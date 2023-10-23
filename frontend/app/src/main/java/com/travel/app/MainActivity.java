@@ -1,29 +1,24 @@
 package com.travel.app;
 
-import static android.graphics.Color.BLACK;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
-import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanIntentResult;
 import com.journeyapps.barcodescanner.ScanOptions;
 import com.travel.app.layouts.AdminLogin;
 import com.travel.app.layouts.UserLogin;
 import com.travel.app.values.Values;
+
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText domainNameInput, portNumberInput;
     private TextView orSeparator;
     private String gatewayUrl;
+    private HashMap<String, String> session = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         enterUrlCard.setVisibility(View.GONE);
         orSeparator.setVisibility(View.GONE);
 
-        if(Values.GATEWAY_URL.isEmpty()){
+        if (Values.GATEWAY_URL.isEmpty()) {
             userBtn.setVisibility(View.GONE);
             adminBtn.setVisibility(View.GONE);
             scanQRBtn.setVisibility(View.VISIBLE);
@@ -71,15 +67,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        urlSubmitBtn.setOnClickListener(new View.OnClickListener(){
+        urlSubmitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String domainName = domainNameInput.getText().toString();
                 String portNumber = portNumberInput.getText().toString();
                 gatewayUrl = "http://" + domainName + ":" + portNumber;
-                if(domainName.isEmpty() && portNumber.isEmpty())
+                Values.GATEWAY_URL = gatewayUrl;
+                session.put("gatewayUrl", gatewayUrl);
+                if (domainName.isEmpty() && portNumber.isEmpty())
                     Toast.makeText(getApplicationContext(), "Domain Name and Port Number cannot be Empty !!!", Toast.LENGTH_SHORT).show();
-                else{
+                else {
                     userBtn.setVisibility(View.VISIBLE);
                     adminBtn.setVisibility(View.VISIBLE);
                     scanQRBtn.setVisibility(View.GONE);
@@ -95,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), UserLogin.class);
                 Toast.makeText(MainActivity.this, "Welcome to User Login", Toast.LENGTH_SHORT).show();
-                intent.putExtra("gatewayUrl", gatewayUrl);
+                intent.putExtra("session", session);
                 startActivity(intent);
             }
         });
@@ -104,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AdminLogin.class);
                 Toast.makeText(MainActivity.this, "Welcome to Admin Login", Toast.LENGTH_SHORT).show();
+                intent.putExtra("session", session);
                 startActivity(intent);
             }
         });
@@ -116,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void scanQR() {
         ScanOptions intentIntegrator = new ScanOptions();
-        intentIntegrator.setOrientationLocked(true)
+        intentIntegrator.setOrientationLocked(false)
                 .setBeepEnabled(true)
                 .setDesiredBarcodeFormats(ScanOptions.QR_CODE)
                 .setPrompt("Scan Server QR Code to get Server URL")
@@ -126,11 +125,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if(requestCode == 1){
+        if (requestCode == 1) {
             ScanIntentResult intentResult = ScanIntentResult.parseActivityResult(resultCode, data);
             gatewayUrl = intentResult.getContents();
-            if(!gatewayUrl.startsWith("Server ")) Toast.makeText(this, "Invalid QR code content !!!", Toast.LENGTH_SHORT).show();
-            else{
+            Values.GATEWAY_URL = gatewayUrl;
+            session.put("gatewayUrl", gatewayUrl);
+            if (!gatewayUrl.startsWith("Server "))
+                Toast.makeText(this, "Invalid QR code content !!!", Toast.LENGTH_SHORT).show();
+            else {
                 userBtn.setVisibility(View.VISIBLE);
                 adminBtn.setVisibility(View.VISIBLE);
                 scanQRBtn.setVisibility(View.GONE);

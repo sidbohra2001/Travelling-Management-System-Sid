@@ -19,6 +19,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.travel.app.MainActivity;
 import com.travel.app.R;
 
+import java.util.HashMap;
 import java.util.concurrent.Executor;
 
 public class UserLogin extends AppCompatActivity {
@@ -28,6 +29,7 @@ public class UserLogin extends AppCompatActivity {
     private CardView card;
     private Button userLoginBtn;
     private String gatewayUrl;
+    private HashMap<String, String> session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,8 @@ public class UserLogin extends AppCompatActivity {
         setContentView(R.layout.activity_user_login_page);
 
         //Retrieving Intent Extras
-        gatewayUrl = getIntent().getExtras().getString("gatewayUrl");
+        session = (HashMap<String, String>) getIntent().getSerializableExtra("session");
+        gatewayUrl = session.get("gatewayUrl");
 
         //Initializing Resources
         registerHereBtn = findViewById(R.id.registerHereBtn);
@@ -58,8 +61,8 @@ public class UserLogin extends AppCompatActivity {
                 //TODO : authenticate user
 
                 Intent intent = new Intent(getApplicationContext(), UserDashboard.class);
-                intent.putExtra("username", userUsernameInputBox.getText().toString());
-                intent.putExtra("gatewayUrl", gatewayUrl);
+                session.put("username", userUsernameInputBox.getText().toString());
+                intent.putExtra("session", session);
                 Toast.makeText(UserLogin.this, gatewayUrl, Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }

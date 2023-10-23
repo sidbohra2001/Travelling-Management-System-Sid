@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".layouts.UserDashboard">
+    tools:context=".layouts.AdminDashboard">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/userDashBoard"
+                    android:id="@+id/adminDashBoard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -37,7 +37,7 @@
                     android:shadowDx="8"
                     android:shadowDy="8"
                     android:shadowRadius="2"
-                    android:text="User Dashboard"
+                    android:text="Admin Dashboard"
                     android:textColor="@color/bg_blue_darkest"
                     android:textSize="32sp"
                     android:textStyle="bold"
@@ -47,7 +47,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/welcomeUsernameMsg"
+                    android:id="@+id/adminWelcomeUsernameMsg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -62,10 +62,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/userDashBoard" />
+                    app:layout_constraintTop_toBottomOf="@+id/adminDashBoard" />
 
                 <TextView
-                    android:id="@+id/userUserNameDisp"
+                    android:id="@+id/adminUserNameDisp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -85,7 +85,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/welcomeUsernameMsg" />
+                    app:layout_constraintTop_toBottomOf="@+id/adminWelcomeUsernameMsg" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -98,7 +98,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/userUserNameDisp">
+                    app:layout_constraintTop_toBottomOf="@id/adminUserNameDisp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -106,7 +106,7 @@
                         android:paddingBottom="10dp">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/busServiceBtn"
+                            android:id="@+id/busManagementBtn"
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="10dp"
@@ -121,7 +121,7 @@
                             app:layout_constraintTop_toTopOf="parent">
 
                             <ImageView
-                                android:id="@+id/busIcon"
+                                android:id="@+id/adminBusIcon"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="5dp"
@@ -130,7 +130,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <TextView
-                            android:id="@+id/busServiceTxt"
+                            android:id="@+id/busManagementTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -138,16 +138,17 @@
                             android:shadowDx="5"
                             android:shadowDy="5"
                             android:shadowRadius="2"
-                            android:text="Book Bus"
+                            android:text="Bus\nManagement"
+                            android:textAlignment="center"
                             android:textColor="@color/bg_blue_darkest"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintLeft_toLeftOf="@id/busServiceBtn"
-                            app:layout_constraintRight_toRightOf="@id/busServiceBtn"
-                            app:layout_constraintTop_toBottomOf="@id/busServiceBtn" />
+                            app:layout_constraintLeft_toLeftOf="@id/busManagementBtn"
+                            app:layout_constraintRight_toRightOf="@id/busManagementBtn"
+                            app:layout_constraintTop_toBottomOf="@id/busManagementBtn" />
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/trainServiceBtn"
+                            android:id="@+id/trainManagementBtn"
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="10dp"
@@ -157,9 +158,9 @@
                             android:minWidth="50dp"
                             android:minHeight="50dp"
                             app:cardCornerRadius="10dp"
-                            app:layout_constraintEnd_toStartOf="@+id/flightServiceBtn"
+                            app:layout_constraintEnd_toStartOf="@+id/flightManagementBtn"
                             app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toEndOf="@+id/busServiceBtn"
+                            app:layout_constraintStart_toEndOf="@+id/busManagementBtn"
                             app:layout_constraintTop_toTopOf="parent">
 
                             <ImageView
@@ -172,7 +173,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <TextView
-                            android:id="@+id/trainServiceTxt"
+                            android:id="@+id/trainManagementTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -180,16 +181,17 @@
                             android:shadowDx="5"
                             android:shadowDy="5"
                             android:shadowRadius="2"
-                            android:text="Book Train"
+                            android:text="Train\nManagement"
+                            android:textAlignment="center"
                             android:textColor="@color/bg_blue_darkest"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintLeft_toLeftOf="@id/trainServiceBtn"
-                            app:layout_constraintRight_toRightOf="@id/trainServiceBtn"
-                            app:layout_constraintTop_toBottomOf="@id/trainServiceBtn" />
+                            app:layout_constraintLeft_toLeftOf="@id/trainManagementBtn"
+                            app:layout_constraintRight_toRightOf="@id/trainManagementBtn"
+                            app:layout_constraintTop_toBottomOf="@id/trainManagementBtn" />
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/flightServiceBtn"
+                            android:id="@+id/flightManagementBtn"
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_margin="10dp"
@@ -213,7 +215,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <TextView
-                            android:id="@+id/flightServiceTxt"
+                            android:id="@+id/flightManManagementTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -221,16 +223,17 @@
                             android:shadowDx="5"
                             android:shadowDy="5"
                             android:shadowRadius="2"
-                            android:text="Book Flight"
+                            android:text="Flight\nManagement"
+                            android:textAlignment="center"
                             android:textColor="@color/bg_blue_darkest"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintLeft_toLeftOf="@id/flightServiceBtn"
-                            app:layout_constraintRight_toRightOf="@id/flightServiceBtn"
-                            app:layout_constraintTop_toBottomOf="@id/flightServiceBtn" />
+                            app:layout_constraintLeft_toLeftOf="@id/flightManagementBtn"
+                            app:layout_constraintRight_toRightOf="@id/flightManagementBtn"
+                            app:layout_constraintTop_toBottomOf="@id/flightManagementBtn" />
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/showBookingsBtn"
+                            android:id="@+id/bookingsManagementBtn"
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_marginTop="10dp"
@@ -240,12 +243,12 @@
                             android:minWidth="50dp"
                             android:minHeight="50dp"
                             app:cardCornerRadius="10dp"
-                            app:layout_constraintLeft_toLeftOf="@id/busServiceTxt"
-                            app:layout_constraintRight_toRightOf="@id/busServiceTxt"
-                            app:layout_constraintTop_toBottomOf="@id/busServiceTxt">
+                            app:layout_constraintLeft_toLeftOf="@id/busManagementTxt"
+                            app:layout_constraintRight_toRightOf="@id/busManagementTxt"
+                            app:layout_constraintTop_toBottomOf="@id/busManagementTxt">
 
                             <ImageView
-                                android:id="@+id/imageView4"
+                                android:id="@+id/ticketIcon"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_margin="5dp"
@@ -262,13 +265,14 @@
                             android:shadowDx="2"
                             android:shadowDy="2"
                             android:shadowRadius="2"
-                            android:text="My Bookings"
+                            android:text="Bookings\nManagement"
                             android:textColor="@color/bg_blue_darkest"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            app:layout_constraintLeft_toLeftOf="@id/showBookingsBtn"
-                            app:layout_constraintRight_toRightOf="@id/showBookingsBtn"
-                            app:layout_constraintTop_toBottomOf="@id/showBookingsBtn" />
+                            app:layout_constraintLeft_toLeftOf="@id/bookingsManagementBtn"
+                            app:layout_constraintRight_toRightOf="@id/bookingsManagementBtn"
+                            app:layout_constraintTop_toBottomOf="@id/bookingsManagementBtn"
+                            android:textAlignment="center" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -276,4 +280,5 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
