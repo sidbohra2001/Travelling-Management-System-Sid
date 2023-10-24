@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".layouts.AddBus">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_blue_lightest"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:shadowColor="@color/bg_blue_dark"
+                    android:shadowDx="8"
+                    android:shadowDy="8"
+                    android:shadowRadius="2"
+                    android:text="Add Bus"
+                    android:textAlignment="center"
+                    android:textColor="@color/bg_blue_darkest"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/busicon"
+                    app:layout_constraintLeft_toLeftOf="@id/textView5"
+                    app:layout_constraintRight_toRightOf="@id/textView5"
+                    app:layout_constraintTop_toBottomOf="@id/textView5" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:shadowColor="@color/bg_blue_dark"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="2"
+                    android:text="Add The Details Of The Bus\nYou Want To Add In The Database"
+                    android:textAlignment="center"
+                    android:textColor="@color/bg_blue_darkest"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="@id/imageView6"
+                    app:layout_constraintRight_toRightOf="@id/imageView6"
+                    app:layout_constraintTop_toBottomOf="@id/imageView6" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/bg_blue_light"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/textView7"
+                    app:layout_constraintRight_toRightOf="@id/textView7"
+                    app:layout_constraintTop_toBottomOf="@id/textView7">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_marginTop="10dp"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/bg_blue_lightest">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/addBus_busRegistrationNumber"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/bg_blue_lightest"
+                                    android:hint="Registration Number"
+                                    android:textColorHint="@color/bg_blue_darkest" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:backgroundTint="@color/bg_blue_lightest"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView2"
+                            app:layout_constraintStart_toStartOf="@+id/cardView2"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/textView9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:labelFor="@id/busTypeRadioGrp"
+                                    android:text="Bus Type :"
+                                    android:textSize="16sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.5" />
+
+                                <RadioGroup
+                                    android:id="@+id/busTypeRadioGrp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toRightOf="@id/textView9"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.5">
+
+                                    <RadioButton
+                                        android:id="@+id/sittingRadioBtn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="10dp"
+                                        android:layout_marginVertical="5dp"
+                                        android:text="Sitting"
+                                        android:textSize="16sp" />
+
+                                    <RadioButton
+                                        android:id="@+id/sleeperRadioBtn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="10dp"
+                                        android:layout_marginVertical="5dp"
+                                        android:text="Sleeper"
+                                        android:textSize="16sp" />
+                                </RadioGroup>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView3"
+                            app:layout_constraintStart_toStartOf="@+id/cardView3"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/bg_blue_lightest">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/addBus_busPricePerSeat"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/bg_blue_lightest"
+                                    android:hint="Price per Seat"
+                                    android:textColorHint="@color/bg_blue_darkest" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView4"
+                            app:layout_constraintStart_toStartOf="@+id/cardView4"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView4">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/bg_blue_lightest">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/addBus_busOrganizationName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/bg_blue_lightest"
+                                    android:hint="Organization Name"
+                                    android:textColorHint="@color/bg_blue_darkest" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView5"
+                            app:layout_constraintStart_toStartOf="@+id/cardView5"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView5">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/bg_blue_lightest">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/addBus_busDriverName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/bg_blue_lightest"
+                                    android:hint="Driver Name"
+                                    android:textColorHint="@color/bg_blue_darkest" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView7"
+                            app:layout_constraintStart_toStartOf="@+id/cardView7"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView7">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/bg_blue_lightest">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/addBus_busConductorName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/bg_blue_lightest"
+                                    android:hint="Conductor Name"
+                                    android:textColorHint="@color/bg_blue_darkest" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView8"
+                            app:layout_constraintStart_toStartOf="@+id/cardView8"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView8">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/bg_blue_lightest">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/addBus_busDriverPhoneNumber"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/bg_blue_lightest"
+                                    android:hint="Driver Phone Number"
+                                    android:textColorHint="@color/bg_blue_darkest" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView9"
+                            app:layout_constraintStart_toStartOf="@+id/cardView9"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView9">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/bg_blue_lightest">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/addBus_busConductorPhoneNumber"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/bg_blue_lightest"
+                                    android:hint="Conductor Phone Number"
+                                    android:textColorHint="@color/bg_blue_darkest" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView10"
+                            app:layout_constraintStart_toStartOf="@+id/cardView10"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView10">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/bg_blue_lightest">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/addBus_busSourceCity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/bg_blue_lightest"
+                                    android:hint="Source City"
+                                    android:textColorHint="@color/bg_blue_darkest" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:backgroundTint="@color/bg_blue_lightest"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView12"
+                            app:layout_constraintStart_toStartOf="@+id/cardView12"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView12">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/textView11"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:labelFor="@id/startTimePicker"
+                                    android:text="Start Time : "
+                                    android:textSize="16sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.5" />
+
+                                <TimePicker
+                                    android:id="@+id/startTimePicker"
+                                    style="@android:style/Widget.Material.TimePicker"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:amPmTextColor="@color/bg_blue_darkest"
+                                    android:background="@color/bg_blue_lightest"
+                                    android:headerBackground="@color/bg_blue_dark"
+                                    android:numbersBackgroundColor="@color/bg_blue_light"
+                                    android:numbersInnerTextColor="@color/bg_blue_darkest"
+                                    android:numbersSelectorColor="@color/bg_blue_dark"
+                                    android:numbersTextColor="@color/bg_blue_darkest"
+                                    android:timePickerMode="spinner"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/textView11"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.5" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView13"
+                            app:layout_constraintStart_toStartOf="@+id/cardView13"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView13">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/bg_blue_lightest">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/addBus_busDestinationCity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/bg_blue_lightest"
+                                    android:hint="Destination City"
+                                    android:textColorHint="@color/bg_blue_darkest" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardView14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:backgroundTint="@color/bg_blue_lightest"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView11"
+                            app:layout_constraintStart_toStartOf="@+id/cardView11"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView11">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/textView10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:labelFor="@id/endTimePicker"
+                                    android:text="End Time : "
+                                    android:textSize="16sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.5" />
+
+                                <TimePicker
+                                    android:id="@+id/endTimePicker"
+                                    style="@android:style/Widget.Material.TimePicker"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:amPmTextColor="@color/bg_blue_darkest"
+                                    android:background="@color/bg_blue_lightest"
+                                    android:headerBackground="@color/bg_blue_dark"
+                                    android:numbersBackgroundColor="@color/bg_blue_light"
+                                    android:numbersInnerTextColor="@color/bg_blue_darkest"
+                                    android:numbersSelectorColor="@color/bg_blue_dark"
+                                    android:numbersTextColor="@color/bg_blue_darkest"
+                                    android:timePickerMode="spinner"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/textView10"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.5" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <Button
+                            android:id="@+id/button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:backgroundTint="@color/bg_blue_dark"
+                            android:shadowColor="@color/black"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="2"
+                            android:text="SUBMIT"
+                            android:textSize="24dp"
+                            android:textStyle="bold"
+                            app:cornerRadius="10dp"
+                            app:layout_constraintEnd_toEndOf="@+id/cardView14"
+                            app:layout_constraintStart_toStartOf="@+id/cardView14"
+                            app:layout_constraintTop_toBottomOf="@id/cardView14" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
