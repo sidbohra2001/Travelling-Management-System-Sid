@@ -1,4 +1,4 @@
-package com.travel.app.layouts;
+package com.travel.app.layouts.user;
 
 import android.os.Bundle;
 import android.view.View;
@@ -33,7 +33,7 @@ public class UserDashboard extends AppCompatActivity {
         showBookingsBtn = findViewById(R.id.showBookingsBtn);
         username = session.get("username");
         gatewayUrl = session.get("gatewayUrl");
-        bookingUrl = gatewayUrl+"/booking";
+        bookingUrl = gatewayUrl + "/booking";
 
         //Setting behaviours
         userUserNameDisp.setText(username);
@@ -41,7 +41,7 @@ public class UserDashboard extends AppCompatActivity {
         busServiceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                transportUrl = gatewayUrl+"/bus";
+                transportUrl = gatewayUrl + "/bus";
                 Toast.makeText(UserDashboard.this, "Welcome To Bus Services", Toast.LENGTH_SHORT).show();
             }
         });
@@ -49,7 +49,7 @@ public class UserDashboard extends AppCompatActivity {
         trainServiceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                transportUrl = gatewayUrl+"/train";
+                transportUrl = gatewayUrl + "/train";
                 Toast.makeText(UserDashboard.this, "Welcome To Train Services", Toast.LENGTH_SHORT).show();
             }
         });
@@ -57,26 +57,19 @@ public class UserDashboard extends AppCompatActivity {
         flightServiceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                transportUrl = gatewayUrl+"/flight";
+                transportUrl = gatewayUrl + "/flight";
                 Toast.makeText(UserDashboard.this, "Welcome To Flight Services", Toast.LENGTH_SHORT).show();
             }
         });
 
-        showBookingsBtn.setOnClickListener(new View.OnClickListener(){
+        showBookingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bookingUrl = gatewayUrl+"/bookings";
+                bookingUrl = gatewayUrl + "/bookings";
                 Toast.makeText(UserDashboard.this, "Welcome To your Bookings", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
-
-
-
-
-
-
 
 
 //    public void extra(){

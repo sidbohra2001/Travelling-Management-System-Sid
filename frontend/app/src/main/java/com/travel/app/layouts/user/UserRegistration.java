@@ -1,12 +1,12 @@
-package com.travel.app.layouts;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.travel.app.layouts.user;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.travel.app.R;
@@ -31,7 +31,8 @@ public class UserRegistration extends AppCompatActivity {
         registerUserBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!checkCredentials()) Toast.makeText(UserRegistration.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                if (!checkCredentials())
+                    Toast.makeText(UserRegistration.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                 else {
                     Intent intent = new Intent(getApplicationContext(), UserLogin.class);
                     Toast.makeText(UserRegistration.this, "User Registered", Toast.LENGTH_SHORT).show();

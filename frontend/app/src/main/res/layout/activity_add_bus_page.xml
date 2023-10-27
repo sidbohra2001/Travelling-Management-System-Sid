@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".layouts.AddBus">
+    tools:context=".layouts.admin.bus.AddBus">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -396,7 +396,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="15dp"
-                                    android:labelFor="@id/startTimePicker"
+                                    android:labelFor="@id/addBus_startTimePicker"
                                     android:text="Start Time : "
                                     android:textSize="16sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -405,7 +405,7 @@
                                     app:layout_constraintVertical_bias="0.5" />
 
                                 <TimePicker
-                                    android:id="@+id/startTimePicker"
+                                    android:id="@+id/addBus_startTimePicker"
                                     style="@android:style/Widget.Material.TimePicker"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -474,7 +474,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="15dp"
-                                    android:labelFor="@id/endTimePicker"
+                                    android:labelFor="@id/addBus_endTimePicker"
                                     android:text="End Time : "
                                     android:textSize="16sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -483,7 +483,7 @@
                                     app:layout_constraintVertical_bias="0.5" />
 
                                 <TimePicker
-                                    android:id="@+id/endTimePicker"
+                                    android:id="@+id/addBus_endTimePicker"
                                     style="@android:style/Widget.Material.TimePicker"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -504,7 +504,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <Button
-                            android:id="@+id/button"
+                            android:id="@+id/addBus_submitBtn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"

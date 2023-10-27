@@ -1,26 +1,20 @@
-package com.travel.app.layouts;
+package com.travel.app.layouts.user;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.biometric.BiometricManager;
-import androidx.biometric.BiometricPrompt;
 import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.travel.app.MainActivity;
 import com.travel.app.R;
 
 import java.util.HashMap;
-import java.util.concurrent.Executor;
 
 public class UserLogin extends AppCompatActivity {
 
@@ -68,7 +62,6 @@ public class UserLogin extends AppCompatActivity {
             }
         });
     }
-
 
 
     @Override

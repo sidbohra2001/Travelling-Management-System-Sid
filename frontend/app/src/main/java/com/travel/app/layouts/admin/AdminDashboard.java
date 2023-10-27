@@ -1,15 +1,17 @@
-package com.travel.app.layouts;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+package com.travel.app.layouts.admin;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 import com.travel.app.R;
+import com.travel.app.layouts.admin.bus.AdminBusManagement;
 
 import java.util.HashMap;
 
@@ -33,13 +35,14 @@ public class AdminDashboard extends AppCompatActivity {
         trainManagementBtn = findViewById(R.id.trainManagementBtn);
         flightManagementBtn = findViewById(R.id.flightManagementBtn);
         bookingsManagementBtn = findViewById(R.id.bookingsManagementBtn);
+        Log.e("E:", gatewayUrl);
 
         //Setting behaviours
         adminUserNameDisp.setText(session.get("adminName"));
         busManagementBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                transportManagementUrl = gatewayUrl+"/bus";
+                transportManagementUrl = gatewayUrl + "/bus";
                 session.put("transportManagementUrl", transportManagementUrl);
                 Intent intent = new Intent(AdminDashboard.this, AdminBusManagement.class);
                 intent.putExtra("session", session);
@@ -51,7 +54,7 @@ public class AdminDashboard extends AppCompatActivity {
         trainManagementBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                transportManagementUrl = gatewayUrl+"/train";
+                transportManagementUrl = gatewayUrl + "/train";
                 Toast.makeText(AdminDashboard.this, "Welcome To Train Management", Toast.LENGTH_SHORT).show();
             }
         });
@@ -59,15 +62,15 @@ public class AdminDashboard extends AppCompatActivity {
         flightManagementBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                transportManagementUrl = gatewayUrl+"/flight";
+                transportManagementUrl = gatewayUrl + "/flight";
                 Toast.makeText(AdminDashboard.this, "Welcome To Flight Management", Toast.LENGTH_SHORT).show();
             }
         });
 
-        bookingsManagementBtn.setOnClickListener(new View.OnClickListener(){
+        bookingsManagementBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bookingsManagementUrl = gatewayUrl+"/bookings";
+                bookingsManagementUrl = gatewayUrl + "/bookings";
                 Toast.makeText(AdminDashboard.this, "Welcome To Bookings Management", Toast.LENGTH_SHORT).show();
             }
         });

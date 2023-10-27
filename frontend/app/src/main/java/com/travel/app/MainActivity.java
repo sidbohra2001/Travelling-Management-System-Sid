@@ -14,8 +14,8 @@ import androidx.cardview.widget.CardView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.journeyapps.barcodescanner.ScanIntentResult;
 import com.journeyapps.barcodescanner.ScanOptions;
-import com.travel.app.layouts.AdminLogin;
-import com.travel.app.layouts.UserLogin;
+import com.travel.app.layouts.admin.AdminLogin;
+import com.travel.app.layouts.user.UserLogin;
 import com.travel.app.values.Values;
 
 import java.util.HashMap;
@@ -129,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
             ScanIntentResult intentResult = ScanIntentResult.parseActivityResult(resultCode, data);
             gatewayUrl = intentResult.getContents();
             Values.GATEWAY_URL = gatewayUrl;
-            session.put("gatewayUrl", gatewayUrl);
             if (!gatewayUrl.startsWith("Server "))
                 Toast.makeText(this, "Invalid QR code content !!!", Toast.LENGTH_SHORT).show();
             else {
@@ -139,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 enterUrlCard.setVisibility(View.GONE);
                 orSeparator.setVisibility(View.GONE);
                 gatewayUrl = gatewayUrl.substring(7);
+                session.put("gatewayUrl", gatewayUrl);
                 Toast.makeText(this, gatewayUrl, Toast.LENGTH_SHORT).show();
             }
         }

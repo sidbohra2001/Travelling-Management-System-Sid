@@ -1,12 +1,12 @@
-package com.travel.app.layouts;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+package com.travel.app.layouts.admin.bus;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.travel.app.R;
 

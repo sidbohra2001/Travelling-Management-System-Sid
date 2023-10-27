@@ -53,5 +53,6 @@ dependencies {
     implementation("com.google.zxing:core:3.5.2")                                   //Zxing dependency for QR Scanner
     implementation("androidx.biometric:biometric:1.1.0")                            //Biometric Dependency
     implementation("com.android.volley:volley:1.2.1")                               //Volley for REST calls
-
+    implementation("com.google.code.gson:gson:2.10.1")                              //GSON for object mapping to json
+    implementation("com.amitshekhar.android:android-networking:1.0.2")              //Android Networking for REST calls
 }
