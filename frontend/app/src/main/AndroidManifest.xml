@@ -20,6 +20,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".layouts.admin.bus.GetBusesAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".layouts.admin.bus.GetBuses"
+            android:exported="false" />
+        <activity
+            android:name=".layouts.admin.bus.DeleteBus"
+            android:exported="false" />
+        <activity
+            android:name=".layouts.admin.bus.UpdateBus"
+            android:exported="false" />
+        <activity
+            android:name=".layouts.admin.bus.GetBus"
+            android:exported="false" />
+        <activity
             android:name=".layouts.testCode.AsyncPostTest"
             android:exported="false" />
         <activity

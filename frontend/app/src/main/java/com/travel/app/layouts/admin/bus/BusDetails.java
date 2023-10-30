@@ -69,4 +69,10 @@ public class BusDetails extends AppCompatActivity {
         resp_busAvailabilityStatus.setText(bus.getAvailabilityStatus());
         resp_busOccupiedSeats.setText(bus.getOccupiedSeats().toString());
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        session.remove("bus");
+    }
 }

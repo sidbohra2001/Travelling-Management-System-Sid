@@ -1,5 +1,7 @@
 package com.travel.app.layouts.admin.bus;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,8 +11,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.ANRequest;
@@ -23,76 +23,74 @@ import com.travel.app.R;
 import com.travel.app.model.Bus;
 import com.travel.app.model.ErrorFormat;
 
-import org.json.JSONObject;
-
 import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 
-public class AddBus extends AppCompatActivity {
+public class UpdateBus extends AppCompatActivity {
 
-    private TextInputEditText addBus_busRegistrationNumber, addBus_busPricePerSeat, addBus_busOrganizationName, addBus_busDriverName, addBus_busConductorName,
-            addBus_busDriverPhoneNumber, addBus_busConductorPhoneNumber, addBus_busSourceCity, addBus_busDestinationCity;
-    private TimePicker addBus_startTimePicker, addBus_endTimePicker;
+    private TextInputEditText updateBus_busRegistrationNumber, updateBus_busPricePerSeat, updateBus_busOrganizationName, updateBus_busDriverName, updateBus_busConductorName,
+            updateBus_busDriverPhoneNumber, updateBus_busConductorPhoneNumber, updateBus_busSourceCity, updateBus_busDestinationCity;
+    private TimePicker updateBus_startTimePicker, updateBus_endTimePicker;
     private RadioGroup busTypeRadioGrp;
     private RadioButton sittingRadioBtn, sleeperRadioBtn;
     private Bus bus;
-    private Button addBus_submitBtn;
+    private Button updateBus_submitBtn;
     private HashMap<String, String> session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_bus_page);
+        setContentView(R.layout.activity_update_bus_page);
 
         //Intializing Resources
         session = (HashMap<String, String>) getIntent().getSerializableExtra("session");
         busTypeRadioGrp = findViewById(R.id.busTypeRadioGrp);
         sittingRadioBtn = findViewById(R.id.sittingRadioBtn);
         sleeperRadioBtn = findViewById(R.id.sleeperRadioBtn);
-        addBus_busRegistrationNumber = findViewById(R.id.addBus_busRegistrationNumber);
-        addBus_busPricePerSeat = findViewById(R.id.addBus_busPricePerSeat);
-        addBus_busOrganizationName = findViewById(R.id.addBus_busOrganizationName);
-        addBus_busDriverName = findViewById(R.id.addBus_busDriverName);
-        addBus_busConductorName = findViewById(R.id.addBus_busConductorName);
-        addBus_busDriverPhoneNumber = findViewById(R.id.addBus_busDriverPhoneNumber);
-        addBus_busConductorPhoneNumber = findViewById(R.id.addBus_busConductorPhoneNumber);
-        addBus_busSourceCity = findViewById(R.id.addBus_busSourceCity);
-        addBus_busDestinationCity = findViewById(R.id.addBus_busDestinationCity);
-        addBus_startTimePicker = findViewById(R.id.addBus_startTimePicker);
-        addBus_endTimePicker = findViewById(R.id.addBus_endTimePicker);
-        addBus_submitBtn = findViewById(R.id.addBus_submitBtn);
+        updateBus_busRegistrationNumber = findViewById(R.id.updateBus_busRegistrationNumber);
+        updateBus_busPricePerSeat = findViewById(R.id.updateBus_busPricePerSeat);
+        updateBus_busOrganizationName = findViewById(R.id.updateBus_busOrganizationName);
+        updateBus_busDriverName = findViewById(R.id.updateBus_busDriverName);
+        updateBus_busConductorName = findViewById(R.id.updateBus_busConductorName);
+        updateBus_busDriverPhoneNumber = findViewById(R.id.updateBus_busDriverPhoneNumber);
+        updateBus_busConductorPhoneNumber = findViewById(R.id.updateBus_busConductorPhoneNumber);
+        updateBus_busSourceCity = findViewById(R.id.updateBus_busSourceCity);
+        updateBus_busDestinationCity = findViewById(R.id.updateBus_busDestinationCity);
+        updateBus_startTimePicker = findViewById(R.id.updateBus_startTimePicker);
+        updateBus_endTimePicker = findViewById(R.id.updateBus_endTimePicker);
+        updateBus_submitBtn = findViewById(R.id.updateBus_submitBtn);
 
         //Setting behaviour
         sittingRadioBtn.setOnClickListener(isChecked -> Toast.makeText(this, sittingRadioBtn.getText().toString(), Toast.LENGTH_SHORT).show());
         sleeperRadioBtn.setOnClickListener(isChecked -> Toast.makeText(this, sleeperRadioBtn.getText().toString(), Toast.LENGTH_SHORT).show());
-        addBus_startTimePicker.setIs24HourView(true);
-        addBus_endTimePicker.setIs24HourView(true);
-        addBus_startTimePicker.setHour(0);
-        addBus_startTimePicker.setMinute(0);
-        addBus_endTimePicker.setHour(0);
-        addBus_endTimePicker.setMinute(0);
+        updateBus_startTimePicker.setIs24HourView(true);
+        updateBus_endTimePicker.setIs24HourView(true);
+        updateBus_startTimePicker.setHour(0);
+        updateBus_startTimePicker.setMinute(0);
+        updateBus_endTimePicker.setHour(0);
+        updateBus_endTimePicker.setMinute(0);
 
         //Setting onClickListeners
-        addBus_submitBtn.setOnClickListener(new View.OnClickListener() {
+        updateBus_submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Adding Data to Bus object.
                 bus = new Bus();
-                bus.setRegistrationNumber(addBus_busRegistrationNumber.getText().toString());
+                bus.setRegistrationNumber(updateBus_busRegistrationNumber.getText().toString());
                 bus.setBusType(busTypeRadioGrp.getCheckedRadioButtonId() == R.id.sleeperRadioBtn ? "SLEEPER" : "SITTING");
-                bus.setPricePerSeat(addBus_busPricePerSeat.getText().toString());
-                bus.setOrganizationName(addBus_busOrganizationName.getText().toString());
-                bus.setDriverName(addBus_busDriverName.getText().toString());
-                bus.setConductorName(addBus_busConductorName.getText().toString());
-                bus.setDriverPhoneNumber(addBus_busDriverPhoneNumber.getText().toString());
-                bus.setConductorPhoneNumber(addBus_busConductorPhoneNumber.getText().toString());
-                bus.setSourceCity(addBus_busSourceCity.getText().toString());
-                bus.setDestinationCity(addBus_busDestinationCity.getText().toString());
-                bus.setStartTime(String.valueOf(LocalTime.of(addBus_startTimePicker.getHour(),addBus_startTimePicker.getMinute())).replace(":",""));
-                bus.setEndTime(String.valueOf(LocalTime.of(addBus_endTimePicker.getHour(),addBus_endTimePicker.getMinute())).replace(":",""));
+                bus.setPricePerSeat(updateBus_busPricePerSeat.getText().toString());
+                bus.setOrganizationName(updateBus_busOrganizationName.getText().toString());
+                bus.setDriverName(updateBus_busDriverName.getText().toString());
+                bus.setConductorName(updateBus_busConductorName.getText().toString());
+                bus.setDriverPhoneNumber(updateBus_busDriverPhoneNumber.getText().toString());
+                bus.setConductorPhoneNumber(updateBus_busConductorPhoneNumber.getText().toString());
+                bus.setSourceCity(updateBus_busSourceCity.getText().toString());
+                bus.setDestinationCity(updateBus_busDestinationCity.getText().toString());
+                bus.setStartTime(String.valueOf(LocalTime.of(updateBus_startTimePicker.getHour(),updateBus_startTimePicker.getMinute())).replace(":",""));
+                bus.setEndTime(String.valueOf(LocalTime.of(updateBus_endTimePicker.getHour(),updateBus_endTimePicker.getMinute())).replace(":",""));
                 String busAddUrl = session.get("transportManagementUrl") + "/";
 
                 //Add bus post request
@@ -102,13 +100,13 @@ public class AddBus extends AppCompatActivity {
                         .writeTimeout(15, TimeUnit.SECONDS)
                         .build();
                 AndroidNetworking.initialize(getApplicationContext(), okHttpClient);
-                ANRequest request = AndroidNetworking.post(busAddUrl)
+                ANRequest request = AndroidNetworking.put(busAddUrl)
                         .addApplicationJsonBody(bus)
                         .build();
                 request.getAsObject(Bus.class, new ParsedRequestListener<Bus>() {
                     @Override
                     public void onResponse(Bus response) {
-                        Intent intent = new Intent(AddBus.this, BusDetails.class);
+                        Intent intent = new Intent(UpdateBus.this, BusDetails.class);
                         session.put("bus", new GsonBuilder().create().toJson(response));
                         intent.putExtra("session", session);
                         startActivity(intent);
@@ -117,7 +115,7 @@ public class AddBus extends AppCompatActivity {
                     @Override
                     public void onError(ANError anError) {
                         ErrorFormat error = new Gson().fromJson(anError.getErrorBody(), ErrorFormat.class);
-                        Toast.makeText(AddBus.this, error.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(UpdateBus.this, error.getMessage(), Toast.LENGTH_LONG).show();
                         Log.e("ERROR : ", error.getMessage());
                     }
                 });
@@ -125,10 +123,10 @@ public class AddBus extends AppCompatActivity {
             }
         });
     }
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         session.remove("transportManagementUrl");
     }
+
 }

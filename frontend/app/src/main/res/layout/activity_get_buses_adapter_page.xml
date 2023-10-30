@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".layouts.admin.bus.GetBusesAdapter">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/bg_blue_light"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/getBuses_registrationNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:shadowColor="@color/bg_blue_dark"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="TextView"
+                android:textColor="@color/bg_blue_darkest"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/getBuses_destinationCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="50dp"
+                android:shadowColor="@color/bg_blue_dark"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="TextView"
+                android:textColor="@color/bg_blue_darkest"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/getBuses_registrationNumber" />
+
+            <TextView
+                android:id="@+id/getBuses_sourceCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp"
+                android:shadowColor="@color/bg_blue_dark"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="TextView"
+                android:textColor="@color/bg_blue_darkest"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/getBuses_registrationNumber" />
+
+            <TextView
+                android:id="@+id/getBuses_startTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:shadowColor="@color/bg_blue_dark"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="TextView"
+                android:textColor="@color/bg_blue_darkest"
+                app:layout_constraintLeft_toLeftOf="@id/getBuses_sourceCity"
+                app:layout_constraintRight_toRightOf="@id/getBuses_sourceCity"
+                app:layout_constraintTop_toBottomOf="@+id/getBuses_sourceCity"
+                tools:layout_constraintTop_toBottomOf="@id/getBuses_sourceCity" />
+
+            <TextView
+                android:id="@+id/getBuses_endTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:shadowColor="@color/bg_blue_dark"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="TextView"
+                android:textColor="@color/bg_blue_darkest"
+                app:layout_constraintLeft_toLeftOf="@id/getBuses_destinationCity"
+                app:layout_constraintRight_toRightOf="@id/getBuses_destinationCity"
+                app:layout_constraintTop_toBottomOf="@+id/getBuses_destinationCity"
+                tools:layout_constraintTop_toBottomOf="@id/getBuses_destinationCity" />
+
+            <TextView
+                android:id="@+id/getBuses_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:shadowColor="@color/bg_blue_dark"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="TextView"
+                android:textColor="@color/bg_blue_darkest"
+                app:layout_constraintEnd_toStartOf="@+id/getBuses_endTime"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/getBuses_startTime"
+                app:layout_constraintTop_toBottomOf="@+id/getBuses_sourceCity" />
+
+            <TextView
+                android:id="@+id/getBuses_pricePerSeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:shadowColor="@color/bg_blue_dark"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="TextView"
+                android:textColor="@color/bg_blue_darkest"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/getBuses_registrationNumber"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/getBuses_registrationNumber" />
+
+            <TextView
+                android:id="@+id/getBuses_busType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:shadowColor="@color/bg_blue_dark"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="TextView"
+                android:textColor="@color/bg_blue_darkest"
+                app:layout_constraintBottom_toBottomOf="@+id/getBuses_registrationNumber"
+                app:layout_constraintStart_toEndOf="@+id/getBuses_registrationNumber"
+                app:layout_constraintTop_toTopOf="@+id/getBuses_registrationNumber" />
+
+            <TextView
+                android:id="@+id/getBuses_seatStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="10dp"
+                android:shadowColor="@color/bg_blue_dark"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:text="TextView"
+                android:textColor="@color/bg_blue_darkest"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/getBuses_endTime" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
