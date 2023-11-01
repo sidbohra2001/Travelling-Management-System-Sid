@@ -5,11 +5,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
+import com.google.gson.reflect.TypeToken;
 import com.travel.app.R;
 import com.travel.app.model.Bus;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -28,10 +34,11 @@ public class GetBuses extends AppCompatActivity {
         busesRecyclerView = findViewById(R.id.busesRecyclerView);
 
         //Fetching Bus List from Session
-        List<Bus> buses = (List<Bus>) new Gson().fromJson(session.get("buses"), List.class);
+        List<Bus> buses = new Gson().fromJson(session.get("buses"), new TypeToken<List<Bus>>() {}.getType());
 
         //Setting view on Recycler View
-        busesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        busesRecyclerView.setAdapter(new GetBusesAdapter(this, buses));
+        busesRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        busesRecyclerView.setAdapter(new GetBusesAdapter(getApplicationContext(), buses, session));
+
     }
 }

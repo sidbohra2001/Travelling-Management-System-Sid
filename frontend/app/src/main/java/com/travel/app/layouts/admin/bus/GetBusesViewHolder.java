@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.travel.app.R;
@@ -11,6 +12,7 @@ import com.travel.app.R;
 public class GetBusesViewHolder extends RecyclerView.ViewHolder{
     TextView getBuses_registrationNumber, getBuses_sourceCity, getBuses_destinationCity, getBuses_pricePerSeat, getBuses_duration, getBuses_startTime,
             getBuses_endTime, getBuses_seatStatus, getBuses_busType;
+    CardView getBusesCard;
 
     public GetBusesViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -23,5 +25,6 @@ public class GetBusesViewHolder extends RecyclerView.ViewHolder{
         getBuses_endTime = itemView.findViewById(R.id.getBuses_endTime);
         getBuses_seatStatus = itemView.findViewById(R.id.getBuses_seatStatus);
         getBuses_busType = itemView.findViewById(R.id.getBuses_busType);
+        getBusesCard = itemView.findViewById(R.id.getBusesCard);
     }
 }

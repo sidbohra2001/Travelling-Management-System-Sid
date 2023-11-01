@@ -86,7 +86,7 @@ public class AdminBusManagement extends AppCompatActivity {
                 request.getAsObject(List.class, new ParsedRequestListener<List<Bus>>() {
                     @Override
                     public void onResponse(List<Bus> response) {
-                        Intent intent = new Intent(AdminBusManagement.this, BusDetails.class);
+                        Intent intent = new Intent(AdminBusManagement.this, GetBuses.class);
                         session.put("buses", new GsonBuilder().create().toJson(response));
                         intent.putExtra("session", session);
                         startActivity(intent);
